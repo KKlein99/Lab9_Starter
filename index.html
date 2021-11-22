@@ -102,6 +102,12 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    class ValidationError extends Error {
+      constructor(message){
+        super(message);
+        this.name = "Custom Error";
+      }
+    }
     const label='China';
     const label1='Time';
     let count=0;
@@ -200,6 +206,9 @@
       finally {
         console.log("No empty input");
       }
+    });
+    window.addEventListener('error', (event) => {
+      throw new ValidationError('some new error for my custom error');
     });
   </script>
 </body>
