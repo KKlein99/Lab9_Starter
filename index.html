@@ -183,6 +183,24 @@
     errorBtns[14].addEventListener('click', function() {
       throw new Error('Triggered a global error');
     });
+
+    let calculate = document.getElementById("calculate");
+    calculate.addEventListener('click', function() {
+      let operation=calculatep[0];
+        let num = operation.getElementById["first-num"].value;
+        let num2 = operation.getElementById["second-num"].value;
+      try {
+        if(num == "" || num2 == ""){
+          throw new Error ("input empty, not working");
+        }
+      }
+      catch (err) {
+        console.error(err);
+      }
+      finally {
+        console.log("No empty input");
+      }
+    });
   </script>
 </body>
 
